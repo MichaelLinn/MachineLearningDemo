@@ -26,8 +26,8 @@
       <file leaf-file-name="ID3_decisionTree.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/decisionTree/DT/ID3_decisionTree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="61" column="74" selection-start-line="61" selection-start-column="74" selection-end-line="61" selection-end-column="74" />
+            <state relative-caret-position="893">
+              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -270,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1471331229966</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="DT update 2">
+      <created>1471336949841</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1471336949841</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -329,7 +336,8 @@
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
     <MESSAGE value="DT update" />
     <MESSAGE value="DT update test" />
-    <option name="LAST_COMMIT_MESSAGE" value="DT update test" />
+    <MESSAGE value="DT update 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="DT update 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -402,8 +410,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/decisionTree/DT/ID3_decisionTree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="61" column="74" selection-start-line="61" selection-start-column="74" selection-end-line="61" selection-end-column="74" />
+        <state relative-caret-position="893">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding />
         </state>
       </provider>
