@@ -14,8 +14,8 @@ class ID3_decisionTree:
     def __init__(self,dataSet):
         self.dataSet = dataSet
 
-#基于特征值A，把D分成D_1,D_2,...,D_i,...,D_n, 此处计算 H(D_i|A = a_i)
-# empirical entropy = sum_i( p_i * H(D|A = a_i) )
+#基于特征值A_j，把D分成D_1,D_2,...,D_i,...,D_n, 此处计算 H(D_i|A_j = a_i)
+# empirical entropy = sum_i( p_i * H(D|A_j = a_i) )
 #                   = sum_i ( |D_i|/|D| * sum_k( - (|D_ik| / |D_i|) log (|D_ik| / |D_i|) ))
     #
     def calcShannonEnt(self,dataSet):
@@ -40,16 +40,39 @@ class ID3_decisionTree:
                 retDataSet.append(reduceFeatVec)
         return retDataSet
 
+#       选择信息增益最大的属性A
     def chooseBestFeatureToSplit(self,dataSet):
 #       特征值数量
         numFeatures = len(dataSet[0] - 1)
         baseEntropy = self.calcShannonEnt(self.dataSet)
         baseInfoGain = 0.0
-        beastFeature = -1
+        bestFeature = -1
+
         for i in numFeatures:
+#        empirical entropy = sum_i( p_i * H(D|A = a_i) )
+#       计算  H(D_i|A = a_i)
             featList = [example[i] for example in dataSet]
         # 用集合的形式存储属性A的所有取值，重复的值只保存一次
+        # uniqueVas == D_i的组数    （a_i数量是对应D_i数量的）
             uniqueVals = set(featList)
+            empiricalEntropy = 0.0
+            for featrue in uniqueVals:
+                subDataSet = self.splitDataSet(i,featrue)
+                prob = len(subDataSet)/float(len(dataSet))
+                empiricalEntropy += prob * self.calcShannonEnt(subDataSet)
+            infoGain = baseEntropy - empiricalEntropy
+            if(infoGain > baseInfoGain):
+                baseInfoGain = infoGain
+                bestFeature = i
+        return bestFeature
+
+
+
+
+
+
+
+
 
 
 
