@@ -9,10 +9,11 @@ from math import log
 
 
 class ID3_decisionTree:
-    dataSet = []
 
-    def __init__(self, dataSet):
+
+    def __init__(self, dataSet,labels):
         self.dataSet = dataSet
+        self.labels = labels
 
     # 基于特征值A_j，把D分成D_1,D_2,...,D_i,...,D_n, 此处计算 H(D_i|A_j = a_i)
     # empirical entropy = sum_i( p_i * H(D|A_j = a_i) )
@@ -106,9 +107,17 @@ def main():
     print("the test is running!")
     dataSet = [[1, 1, 'yes'], [1, 1, 'yes'], [1, 0, 'no'], [0, 1, 'no'], [0, 1, 'no']]
     labels = ["no surfacing" , "flippers"]
-    dt = ID3_decisionTree(dataSet)
+#   dt = ID3_decisionTree(dataSet)
 #   print(dt.calcShannonEnt())
-    id3_DT = dt.createDecisionTree(dataSet,labels)
+#   id3_DT = dt.createDecisionTree(dataSet,labels)
+#   print(id3_DT)
+
+    fr = open("../trainingData/lenses.txt")
+    lenses = [inst.strip().split('\t') for inst in fr.readlines()]
+
+    lenseLabels = ['age','prescripe','astigmatic','tearRate']
+    dt = ID3_decisionTree(lenses,lenseLabels)
+    id3_DT = dt.createDecisionTree(dt.dataSet,dt.labels)
     print(id3_DT)
 
 
