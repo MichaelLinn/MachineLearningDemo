@@ -31,6 +31,8 @@ class gradientDescent:
         self.step = step
         
     def genData(self):
+        # 求一元函数的 linear regression  y = a + b*x
+        # 输入为两列 ，其中一列给 intercept*1
         self.genx = np.ones(shape = (self.length,2))
         self.geny = np.zeros(shape = self.length)
         for i in range(self.length):
@@ -38,21 +40,19 @@ class gradientDescent:
             self.geny[i] = self.Y_parameters[i]
         
     def gradientDescent(self):
-        #thetaJ = thetaJ + sum(y_i - theta_i*x_i)*xj (GradientDescent)
-        #transpose X matrix 
+        # thetaJ = thetaJ + sum(y_i - theta_i*x_i)*xj  (GradientDescent)
+        # transpose X matrix
         xTrans = self.genx.transpose()
         for i in range(self.numOfInterations):
-            #h_theta(x) = theta * X_transpose
+            # h_theta(x) = theta * X_transpose
             hypothesis_theta = np.dot(self.theta,xTrans)
-            #print hypothesis_theta
+            # print hypothesis_theta
             loss_tem = self.geny - hypothesis_theta
-
-            #print loss
+            # square loss function
             self.loss.append(np.sum(loss_tem ** 2))
-            #gradient = matrix_X * matrix(y_i - h_theta(x)) 
+            # gradient = matrix_X * matrix(y_i - h_theta(x))
             #         = sum((y_i - h_theta(x_i)) * x_j)
             gradient = np.dot(xTrans , loss_tem)
-            #print gradient
             self.theta = self.theta + self.step * gradient       
             
     def gradientDescent2(self):

@@ -6,27 +6,36 @@ Created on Thu Jul 28 12:36:46 2016
 """
 
 import numpy as np
+# 得到目录下所有文件名 get all the filename in the directory
 from os import listdir
 
 
 class kNN:
     def __init__(self):
-        self.filename = 'E:\Spyder\KNN\data\datingTestSet.txt'
-        self.inX = np.array([12, 13400, 0.9])
+        self.filename = '..\data\datingTestSet.txt'
+        # 之前出现的问题就是 输入没有进归一化处理 导致不同输入的结果没有什么变化
+        self.inX = np.array([1200, 1340, 0.9])
 
 #   k-nearest-neighbor
     def kNN_classfiy(self, intX, dataSet, labels, k):
         dataSetSize = dataSet.shape[0]
+        # np.tile() method makes the input vector into the same size of the dataSet
+        # in order to do the subtraction between the every sub vector in intX and the all the training vectors
+        #  at one time
         diffMat = np.tile(intX, (dataSetSize, 1)) - dataSet
         sqDiffMat = diffMat ** 2
+        # sum up all the subtractions of every subtraction to get Euler distances between the intX and all vectors
+        # in dataSet
         sqDistances = sqDiffMat.sum(axis=1)
         distances = sqDistances ** 0.5
-        # 返回按照大小排序的数组的下标
+        # 返回按照大小排序的数组的index
         sortedDistancesIndexs = distances.argsort()
         classCount = {}
         for i in range(k):
             voteILable = labels[sortedDistancesIndexs[i]]
             # count the class
+            # usage : clasCount[voteILable] 存在则 classCount[voteILable] += 1
+            #                               否则  classCount[voteILabel] = 0 + 1
             classCount[voteILable] = classCount.get(voteILable, 0) + 1
 
         sortedClassCount = sorted(classCount.items(), key=lambda classCount: classCount[1], reverse=True)
@@ -48,6 +57,7 @@ class kNN:
         self.classLabelVector = classLabelVector
         return returnMat, classLabelVector
 
+#   normalize all the attributes
     def autoNorm(self, dataSet):
         minVals = dataSet.min(0)
         maxVals = dataSet.max(0)
@@ -116,9 +126,12 @@ class kNN:
 c = kNN()
 dataSet, labels = c.file2matrix(c.filename)
 normDataSet, ranges, minVals = c.autoNorm(dataSet)
-# print(c.kNN_classfiy(c.inX , dataSet , labels,10))
+normInput = (c.inX-minVals)/ranges
+print(normInput)
+print(c.kNN_classfiy(normInput , dataSet , labels,10))
+
 # c.datingClassTest()
-c.handwritingClassTest()
+# c.handwritingClassTest()
 
 
 
