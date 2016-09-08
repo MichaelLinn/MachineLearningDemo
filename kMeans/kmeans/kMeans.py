@@ -39,6 +39,7 @@ class k_Means:
     def kMeans(self, dataSet, k ):
         m = np.shape(dataSet)[0]              # the number of the vectors in dataSet
         clusterAssment =  np.mat(np.zeros((m,2)))
+        print('flag')
         centroids = self.randCenter(dataSet, k)
         clusterChanged  = True
         while clusterChanged:
@@ -58,8 +59,8 @@ class k_Means:
                 clusterAssment[i,:] = minIndex,minDist**2
             #print(centroids)
             for cent in range(k):
-                ptsInClust = dataSet[np.nonzero(clusterAssment[:,0] == cent)[0]]
-                centroids[cent,:] = np.mean(ptsInClust, axis = 0)
+                ptsInClust = dataSet[np.nonzero(clusterAssment[:,0] == cent)[0]] # find all the vectors in the kth cluster
+                centroids[cent,:] = np.mean(ptsInClust, axis = 0)                # calculate the mean vector of the kth cluster
         return centroids, clusterAssment
 
 
