@@ -4,6 +4,17 @@ Created on '2016/9/3' '21:01'
 
 @author: 'michael"  
 """
+
+# the base algorithm is iteration
+# first initial the k mean vectors ot the k clusters
+# second calculate all the distances between vectors in the dataset and all the k mean vectors
+# and find out the mean vector which has the minimal distance
+# and update the k-label of the vector in the dataSet,
+# after traversing and calculating all the vectors in the dataSet, check out if there is any differences in k-lable of all the vactors
+# if not end the iteration, if yes then do the second step again
+# in the end output all the k mean vectors
+
+
 import numpy as np
 
 class k_Means:
@@ -17,7 +28,7 @@ class k_Means:
         fr = open(self.datafile)
         for line in fr.readlines():
             curLine = line.strip().split('\t')
-            fltLine = list(map(float,curLine))
+            fltLine = list(map(float,curLine)) # there is something different between python2 and python3
             dataMat.append(fltLine)
         return dataMat
 
