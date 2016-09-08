@@ -8,36 +8,38 @@ import numpy as np
 
 class k_Means:
 
-    def __init__(self):
-        a = 3
+    def __init__(self,filename):
+        self.datafile = filename
 
 
-    def loadDataSet(self,filename):
+    def loadDataSet(self):
         dataMat = []
-        fr = open(filename)
+        fr = open(self.datafile)
         for line in fr.readlines():
             curLine = line.strip().split('\t')
-            fltLine = map(float,curLine)
+            fltLine = list(map(float,curLine))
             dataMat.append(fltLine)
         return dataMat
 
     def distEclud(self, vecA , vecB):
-        return  np.sqrt(sum(np.power(vecA - vecB , 2)))
+        return  np.sqrt(np.sum(np.power((vecA - vecB), 2)))
 
-    def randCenter(self , dataSet , k):
+    def randCenter(self , dataSet, k):
         n = np.shape(dataSet)[1]   # the number of attributes in dataSet
+        print(n)
         centroids = np.mat(np.zeros((k,n)))     # the average points of the k-clusters
         for j in range(n):                      # initialize the mean points of the k-clusters
             minJ = min(dataSet[:,j])
-            rangJ = float(max(dataSet[:,j] - minJ))
+            rangJ = float(max(dataSet[:,j]) - minJ)
             centroids[:,j] = minJ + rangJ * np.random.rand(k,1)
+        print(centroids)
         return centroids
 
 
-    def kMeans(self, dataSet,k, distMeans = distEclud , createCent = randCenter):
+    def kMeans(self, dataSet, k ):
         m = np.shape(dataSet)[0]              # the number of the vectors in dataSet
         clusterAssment =  np.mat(np.zeros((m,2)))
-        centroids =  createCent(dataSet, k)
+        centroids = self.randCenter(dataSet, k)
         clusterChanged  = True
         while clusterChanged:
             clusterChanged = False
@@ -45,19 +47,32 @@ class k_Means:
                 minDist = np.inf
                 minIndex = -1
                 for j in range(k):
-                    distJI = distMeans(centroids[j,:] , dataSet[i,:])
+
+                    distJI = self.distEclud(centroids[j,:] , dataSet[i,:])
                     if distJI < minDist:
                         minDist = distJI
                         minIndex = j
-                if clusterAssment[i,:] != minIndex:
+                if clusterAssment[i,0] != minIndex:
                     clusterChanged = True
                 clusterAssment[i,:] = minIndex,minDist**2
-            print(centroids)
+            #print(centroids)
             for cent in range(k):
-                ptsInClust = dataSet[np.nozero(clusterAssment[:,0].A == cent)[0]]
+                ptsInClust = dataSet[np.nonzero(clusterAssment[:,0] == cent)[0]]
                 centroids[cent,:] = np.mean(ptsInClust, axis = 0)
         return centroids, clusterAssment
 
+
+def main():
+    filename = '../data/testSet.txt'
+    kmeansTest = k_Means(filename)
+    datMat = np.mat(kmeansTest.loadDataSet())
+    kmeansTest.kMeans(datMat,4)
+    centroids,clusterAssment = kmeansTest.kMeans(datMat,4)
+    print(centroids)
+
+
+if __name__ == '__main__':
+    main()
 
 
 
