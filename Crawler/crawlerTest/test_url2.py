@@ -1,18 +1,16 @@
 #  -*- coding: utf-8 -*-
 
-import urllib.request
 
-url = "http://www.baidu.com"
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
 
-print("first method")
-response1 = urllib.request.urlopen(url)
-print(response1.getcode())
-print(len(response1.read()))
+url = "http://www.pythonscraping.com/pages/page1.html"
+# url = "http://www.baidu.com/"
 
-print("second method")
-request = urllib.request.Request(url)
-request.add_header("user-agent","Mozilla/5.0")
-response1 = urllib.request.urlopen(url)
-print(response1.getcode())
-print(len(response1.read()))
+html = urlopen(url)
+bsObj = BeautifulSoup(html.read(), "lxml")
+print(bsObj.head)
+
+
+
 
