@@ -54,6 +54,7 @@ class k_Means:
                         minIndex = j
                 if clusterAssment[i,0] != minIndex:
                     clusterChanged = True
+                # mark the kth label and the distance between centroid and the vector for the every single vector
                 clusterAssment[i,:] = minIndex,minDist**2
             #print(centroids)
             for cent in range(k):
