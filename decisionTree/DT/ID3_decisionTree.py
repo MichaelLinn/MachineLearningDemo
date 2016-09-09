@@ -14,7 +14,6 @@ class ID3_decisionTree:
     def __init__(self, dataSet,labels):
         self.dataSet = dataSet
         self.labels = labels
-
     # 基于特征值A_j，把D分成D_1,D_2,...,D_i,...,D_n, 此处计算 H(D_i|A_j = a_i)
     # empirical entropy = sum_i( p_i * H(D|A_j = a_i) )
     #                   = sum_i ( |D_i|/|D| * sum_k( - (|D_ik| / |D_i|) log (|D_ik| / |D_i|) ))
