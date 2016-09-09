@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86b74a3c-7be2-4165-87bf-defe14831a6b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AdaBoost/__init__.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crawler/crawlerTest/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crawler/crawlerTest/test_url2.py" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AdaBoost/adaBoostTest/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AdaBoost/adaBoostTest/adaBoost.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kMeans/kmeans/kMeans.py" afterPath="$PROJECT_DIR$/kMeans/kmeans/kMeans.py" />
     </list>
     <ignored path="MachineLearningDemo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,20 +29,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
               <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-                <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kMeans.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="kMeans.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kMeans/kmeans/kMeans.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="79" column="45" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
+            <state relative-caret-position="1710">
+              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -63,7 +57,7 @@
       <file leaf-file-name="kNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/KNN/kNN/kNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
+            <state relative-caret-position="1919">
               <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
               <folding>
                 <element signature="e#87#105#0" expanded="true" />
@@ -87,6 +81,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adaBoost.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AdaBoost/adaBoostTest/adaBoost.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,6 +121,7 @@
         <option value="$PROJECT_DIR$/LinearRegression/GD/gradientDescent.py" />
         <option value="$PROJECT_DIR$/Crawler/crawlerTest/test_url2.py" />
         <option value="$PROJECT_DIR$/kMeans/kmeans/kMeans.py" />
+        <option value="$PROJECT_DIR$/AdaBoost/adaBoostTest/adaBoost.py" />
       </list>
     </option>
   </component>
@@ -151,6 +156,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -169,10 +176,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MachineLearningDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MachineLearningDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KNN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MachineLearningDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MachineLearningDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AdaBoost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MachineLearningDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MachineLearningDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AdaBoost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adaBoostTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -509,14 +560,21 @@
       <option name="project" value="LOCAL" />
       <updated>1473384688920</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="delete the scraper">
+      <created>1473388280668</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1473388280668</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1691254" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1691254" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294509" sideWeight="0.5016455" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18330134" sideWeight="0.4983545" order="8" side_tool="false" content_ui="tabs" />
@@ -595,21 +653,14 @@
     <MESSAGE value="k-means update&#10;" />
     <MESSAGE value="k-means update 2&#10;" />
     <MESSAGE value="k-means update dataSet" />
-    <option name="LAST_COMMIT_MESSAGE" value="k-means update dataSet" />
+    <MESSAGE value="delete the scraper" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete the scraper" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/KNN/kagglaHandWritingClassifier/handWritingClassifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1767">
-          <caret line="57" column="104" selection-start-line="57" selection-start-column="104" selection-end-line="57" selection-end-column="104" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LinearRegression/GD/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -630,22 +681,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Crawler/crawlerTest/test_url2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Crawler/crawlerTest/test_url2.py" />
     <entry file="file://$PROJECT_DIR$/KNN/kNN/kNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
@@ -660,7 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1705">
           <caret line="57" column="104" selection-start-line="57" selection-start-column="104" selection-end-line="57" selection-end-column="104" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -684,22 +723,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Crawler/crawlerTest/test_url2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Crawler/crawlerTest/test_url2.py" />
     <entry file="file://$PROJECT_DIR$/KNN/kNN/kNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -714,7 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1045">
           <caret line="57" column="104" selection-start-line="57" selection-start-column="104" selection-end-line="57" selection-end-column="104" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,22 +765,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Crawler/crawlerTest/test_url2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Crawler/crawlerTest/test_url2.py" />
     <entry file="file://$PROJECT_DIR$/KNN/kNN/kNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -768,7 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1045">
           <caret line="57" column="104" selection-start-line="57" selection-start-column="104" selection-end-line="57" selection-end-column="104" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,11 +807,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -811,11 +822,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -823,11 +830,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -835,11 +838,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -847,11 +846,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -859,11 +854,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -871,11 +862,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -883,11 +870,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -895,11 +878,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -907,11 +886,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -922,13 +897,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Crawler/crawlerTest/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Crawler/crawlerTest/__init__.py" />
     <entry file="file://$PROJECT_DIR$/KNN/kNN/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -948,23 +917,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/decisionTree/DT/ID3_decisionTree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <marker date="1473384769689" expanded="true" signature="25:85" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1473384769689" expanded="true" signature="133:3917" ph="..." />
-            <marker date="1473384769689" expanded="true" signature="175:235" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -994,7 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="784">
           <caret line="57" column="104" selection-start-line="57" selection-start-column="104" selection-end-line="57" selection-end-column="104" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,7 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,13 +965,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="784">
           <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/KNN/kNN/kNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
+        <state relative-caret-position="1919">
           <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
           <folding>
             <element signature="e#87#105#0" expanded="true" />
@@ -1024,18 +978,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Crawler/crawlerTest/test_url2.py">
+    <entry file="file://$PROJECT_DIR$/Crawler/crawlerTest/test_url2.py" />
+    <entry file="file://$PROJECT_DIR$/kMeans/kmeans/kMeans.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="1710">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kMeans/kmeans/kMeans.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="79" column="45" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdaBoost/adaBoostTest/adaBoost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
