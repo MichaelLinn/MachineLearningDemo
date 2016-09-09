@@ -22,7 +22,6 @@ class k_Means:
     def __init__(self,filename):
         self.datafile = filename
 
-
     def loadDataSet(self):
         dataMat = []
         fr = open(self.datafile)
