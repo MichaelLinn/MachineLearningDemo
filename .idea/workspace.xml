@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="86b74a3c-7be2-4165-87bf-defe14831a6b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdaBoost/adaBoostTest/adaBoost.py" afterPath="$PROJECT_DIR$/AdaBoost/adaBoostTest/adaBoost.py" />
     </list>
     <ignored path="MachineLearningDemo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -513,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1473601767567</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="AdaBoost update">
+      <created>1473644854858</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1473644854858</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
