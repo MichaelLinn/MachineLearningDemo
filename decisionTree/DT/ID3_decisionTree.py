@@ -9,8 +9,6 @@ from math import log
 
 
 class ID3_decisionTree:
-
-
     def __init__(self, dataSet,labels):
         self.dataSet = dataSet
         self.labels = labels
@@ -52,7 +50,7 @@ class ID3_decisionTree:
             #       计算  H(D_i|A = a_i)
             featList = [example[i] for example in dataSet]
             # 用集合的形式存储属性A的所有取值，重复的值只保存一次
-            # uniqueVas == D_i的组数    （a_i数量是对应D_i数量的）
+            # uniqueVas == D_i 的组数    （a_i数量是对应D_i数量的）
             uniqueVals = set(featList)
             empiricalEntropy = 0.0
             for featrue in uniqueVals:
@@ -123,3 +121,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# result
+# {'tearRate': {'reduced': 'no lenses', 'normal': {'astigmatic': {'yes': {'prescripe': {'myope': 'hard', 'hyper': {'age': {'pre': 'no lenses', 'presbyopic': 'no lenses', 'young': 'hard'}}}}, 'no': {'age': {'pre': 'soft', 'presbyopic': {'prescripe': {'myope': 'no lenses', 'hyper': 'soft'}}, 'young': 'soft'}}}}}}

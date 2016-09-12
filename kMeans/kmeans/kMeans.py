@@ -4,16 +4,16 @@ Created on '2016/9/3' '21:01'
 
 @author: 'michael"  
 """
-
-# the base algorithm is iteration
-# first initial the k mean vectors ot the k clusters
-# second calculate all the distances between vectors in the dataset and all the k mean vectors
-# and find out the mean vector which has the minimal distance
-# and update the k-label of the vector in the dataSet,
-# after traversing and calculating all the vectors in the dataSet, check out if there is any differences in k-lable of all the vactors
-# if not end the iteration, if yes then do the second step again
-# in the end output all the k mean vectors
-
+"""
+  the base algorithm is iteration
+  first initial the k mean vectors of the k clusters
+  second calculate all the distances between vectors in the data set and all the k mean vectors
+  and find out the mean vector which has the minimal distance
+  and update the k-label of the vector in the dataSet,
+  after traversing and calculating all the vectors in the dataSet, check out if there is any differences in k-lable of all the vactors
+  if not end the iteration, if yes then do the second step again
+  in the end output all the k mean vectors
+"""
 
 import numpy as np
 
@@ -58,7 +58,6 @@ class k_Means:
                 minDist = np.inf
                 minIndex = -1
                 for j in range(k):
-
                     distJI = self.distEclud(centroids[j,:] , dataSet[i,:])
                     if distJI < minDist:
                         minDist = distJI
@@ -67,7 +66,7 @@ class k_Means:
                     clusterChanged = True
                 # mark the kth label and the distance between centroid and the vector for the every single vector
                 clusterAssment[i,:] = minIndex,minDist**2
-            #print(centroids)
+            # calculate every kth mean vector of the kth cluster
             for cent in range(k):
                 ptsInClust = dataSet[np.nonzero(clusterAssment[:,0] == cent)[0]] # find all the vectors in the kth cluster
                 centroids[cent,:] = np.mean(ptsInClust, axis = 0)                # calculate the mean vector of the kth cluster
