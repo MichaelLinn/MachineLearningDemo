@@ -32,11 +32,11 @@ class adaBoost:
             rangeMax = dataMatrix[:,i].max()
             stepSize = (rangeMax - rangeMin)/numSteps
             for j in range(-1,int(numSteps) + 1):
-                for inequal in ['lt' , 'gt']:
+                for inequal in ['lt','gt']:
                     thresholdVal = (rangeMin + float(j) * stepSize)
                     predictedVals = self.stumpDecisionTree(dataMatrix,i,thresholdVal,inequal)
                     errArr = np.mat(np.ones((m,1)))
-                    errArr[ predictedVals == classLabels] = 0
+                    errArr[ predictedVals == classLabels] = 0   # set 0 to the vector which is classifired correctly
                     weightedError = D.T * errArr
 
                     if weightedError < minError:
@@ -54,6 +54,14 @@ class adaBoost:
         aggressionClassEst = np.mat(np.zeros((m,1)))
         for i in range(numInt):
             bestStump,error,classEst = self.buildStump(dataArr,classLabels)
+            alpha = float(0.5 * np.log((1.0 - error)/max(error , 1e-16)))   # calculate the weighted of the data
+            bestStump['alpha'] = alpha
+
+
+
+
+
+
 
 
 
