@@ -7,20 +7,21 @@ Created on Thu Jul 28 12:36:46 2016
 
 from math import log
 
-
 class ID3_decisionTree:
+
     def __init__(self, dataSet,labels):
         self.dataSet = dataSet
         self.labels = labels
     # 基于特征值A_j，把D分成D_1,D_2,...,D_i,...,D_n, 此处计算 H(D_i|A_j = a_i)
     # empirical entropy = sum_i( p_i * H(D|A_j = a_i) )
     #                   = sum_i ( |D_i|/|D| * sum_k( - (|D_ik| / |D_i|) log (|D_ik| / |D_i|) ))
-    def calcShannonEnt(self, dataSet):
-        numEntries = len(dataSet)
+
+    def calcShannonEnt(self, dataSet): # calculate every class's Shannon Entropy
+        numEntries = len(dataSet)   # the number of the vectors
         labelCounts = {}
         for featVec in dataSet:
-            currentLabel = featVec[-1]
-            labelCounts[currentLabel] = labelCounts.get(currentLabel, 0) + 1
+            currentLabel = featVec[-1] #  the last line of the data set is the class labels
+            labelCounts[currentLabel] = labelCounts.get(currentLabel, 0) + 1  # calculate the number of the class labels
         shannonEnt = 0.0
         for key in labelCounts:
             prob = float(labelCounts[key] / numEntries)
@@ -28,6 +29,8 @@ class ID3_decisionTree:
         return shannonEnt
 
     # 在数据集D中去掉特征值A_i，方便计算基于属性A_i划分后的数据集D_n的熵
+
+    # delete specific feature value in all the vector by traversing the data set
     def splitDataSet(self, dataSet, axis, value):
         retDataSet = []
         for featVec in dataSet:
@@ -37,11 +40,11 @@ class ID3_decisionTree:
                 retDataSet.append(reduceFeatVec)
         return retDataSet
 
-    #       选择信息增益最大的属性A
+    #  choose the feature which has the most information gain
     def chooseBestFeatureToSplit(self, dataSet):
-        #       特征值A的种类
+        #   the number of the feature's types
         numFeatures = len(dataSet[0]) - 1
-        baseEntropy = self.calcShannonEnt(self.dataSet)
+        baseEntropy = self.calcShannonEnt(self.dataSet)  # H(D)
         baseInfoGain = 0.0
         bestFeature = -1
 
@@ -74,13 +77,13 @@ class ID3_decisionTree:
 
     #   labels是所有属性值的标签列表
     def createDecisionTree(self, dataSet, labels):
-        classList = [example[-1] for example in dataSet]
+        classList = [example[-1] for example in dataSet]    # class label vector
         # 当标签列表中所有的 类别 都相同后，不需要继续分类  递归结束
         if classList.count(classList[0]) == len(classList):
             return classList[0]
         # 当所有属性都被遍历过后(只剩下标签，所以len(dataSet[0] == 1)，递归结束   通过投票来判断最后的类被归属
-        if len(dataSet[0]) == 1:
-            return self.majorityClass(classList)
+        if len(dataSet[0]) == 1:     # the length of (data[0]-1) is equal to the number of the features
+            return self.majorityClass(classList)  # vote for the best classification (let the major class be the class)
         # 选出当前dataSet中拥有最大information gain的属性值
         bestFeature = self.chooseBestFeatureToSplit(dataSet)
         # 当前最佳划分属性值的标签名
@@ -117,10 +120,11 @@ def main():
     id3_DT = dt.createDecisionTree(dt.dataSet,dt.labels)
     print(id3_DT)
 
-
-
 if __name__ == '__main__':
     main()
 
 # result
-# {'tearRate': {'reduced': 'no lenses', 'normal': {'astigmatic': {'yes': {'prescripe': {'myope': 'hard', 'hyper': {'age': {'pre': 'no lenses', 'presbyopic': 'no lenses', 'young': 'hard'}}}}, 'no': {'age': {'pre': 'soft', 'presbyopic': {'prescripe': {'myope': 'no lenses', 'hyper': 'soft'}}, 'young': 'soft'}}}}}}
+# {'tearRate': {'reduced': 'no lenses', 'normal':
+# {'astigmatic': {'yes': {'prescripe': {'myope': 'hard', 'hyper':
+# {'age': {'pre': 'no lenses', 'presbyopic': 'no lenses', 'young': 'hard'}}}}, 'no':
+# {'age': {'pre': 'soft', 'presbyopic': {'prescripe': {'myope': 'no lenses', 'hyper': 'soft'}}, 'young': 'soft'}}}}}}

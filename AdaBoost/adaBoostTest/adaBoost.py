@@ -5,7 +5,7 @@ Created on '2016/9/9' '10:32'
 @author: 'michael"  
 """
 """
-this adaboost model based on the decision trump,
+this adaboost model based on the decision stump,
 the decision trump classifies the data using only one feature at one time
 """
 
@@ -78,7 +78,7 @@ class adaBoost:
             exponent = np.multiply(-1* alpha*np.mat(classLabels).T , classEst) # calculte the exponent [- alpha * Y * Gm(X)]
             print("classEst ：",classEst.T)
             D = np.multiply(D,np.exp(exponent)) # update the weight of the data, w_m = e^[- alpha * Y * Gm(X)]
-            D = D/D.sum()  # D.sum() == Zm (Normalized Factor) which makes sure the D_(m+1) can be a probability distribution
+            D = D/D.sum()  # D.sum() == Z_m (Normalized Factor) which makes sure the D_(m+1) can be a probability distribution
             # give every estimated class vector (the classified result of the weak classifier) a weight
             aggressionClassEst += alpha*classEst
             print("aggression classEst: ",aggressionClassEst.T)
@@ -98,42 +98,5 @@ def main():
     ab.adaBoostTrainDecisionStump(ab.dataMat,ab.classLabels,9)
 
 
-
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
