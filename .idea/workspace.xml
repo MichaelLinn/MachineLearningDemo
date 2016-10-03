@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86b74a3c-7be2-4165-87bf-defe14831a6b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/randomForest/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/randomForest/randomForset_ID3.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scikitDemo/multiOutputDT/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scikitDemo/multiOutputDT/plot_tree_regression_multioutput.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdaBoost/adaBoostTest/adaBoost.py" afterPath="$PROJECT_DIR$/AdaBoost/adaBoostTest/adaBoost.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decisionTree/DT/ID3_decisionTree.py" afterPath="$PROJECT_DIR$/decisionTree/DT/ID3_decisionTree.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/randomForest/randomForset_ID3.py" afterPath="$PROJECT_DIR$/randomForest/randomForset_ID3.py" />
     </list>
     <ignored path="MachineLearningDemo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +36,8 @@
       <file leaf-file-name="randomForset_ID3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/randomForest/randomForset_ID3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="74" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -554,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1473664802729</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="randomForest first update">
+      <created>1475501234686</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1475501234686</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -653,7 +655,8 @@
     <MESSAGE value="AdaBoost" />
     <MESSAGE value="AdaBoost update" />
     <MESSAGE value="AdaBoost full update" />
-    <option name="LAST_COMMIT_MESSAGE" value="AdaBoost full update" />
+    <MESSAGE value="randomForest first update" />
+    <option name="LAST_COMMIT_MESSAGE" value="randomForest first update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -987,8 +990,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/randomForest/randomForset_ID3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="74" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
           <folding />
         </state>
       </provider>

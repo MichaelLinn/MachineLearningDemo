@@ -4,7 +4,6 @@
 
 import numpy as np
 class randomForset():
-
     def __init__(self, train_data, n_estimators=10):
         self.data = train_data
         self.n_estimators = n_estimators
@@ -54,7 +53,8 @@ class randomForset():
                 bestFeature = feature
         return bestFeature,infoGain
 
-    def build_ID3DecisionTree(self,dataSet):
+    def build_ID3DecisionTree(self,dataSet,featureNameList):
+        # featureName is a set including all the name of the feature
         # conditions for termination of the recurcive function
         # condition one : there is only one label class in the data set
         decisionTree = {}
@@ -71,6 +71,14 @@ class randomForset():
             return l[0][0]
         bestFeature = self.choose_bestFeature(dataSet)
         value_bestFeature = np.unique(dataSet[:,bestFeature])
+        decisionTree = {bestFeature:{}}
+        featureNameList.remove(bestFeature)
+        for single_value in value_bestFeature:
+            decisionTree[bestFeature][single_value] = self.build_ID3DecisionTree(self.split_data(bestFeature,single_value),featureNameList)
+        return decisionTree
+
+
+
 
 
 
