@@ -3,6 +3,7 @@
 # @Author   : Jason
 
 import numpy as np
+import random
 class randomForset():
     def __init__(self, train_data, n_estimators=10):
         self.data = train_data
@@ -76,6 +77,80 @@ class randomForset():
         for single_value in value_bestFeature:
             decisionTree[bestFeature][single_value] = self.build_ID3DecisionTree(self.split_data(bestFeature,single_value),featureNameList)
         return decisionTree
+
+    def fit(self):
+        print(self.data.shape)
+        num_data,num_feature = self.data.shape
+        for i in num_data:
+            # sample data
+            samples = np.random.randint(0,num_data,(num_data+1)/2)
+            samples_data = self.data[samples.tolist()]
+            # sample feature select log2(num_feature) feature from the feature set for
+            # every tree
+            features = random.sample(range(num_feature-1),int(np.log2(num_feature-1)))
+            feature_list = features.tolist()
+            feature_list.append(-1)
+            samples_feature_data = samples_data[:,feature_list]
+            # build every single tree
+            decision_tree = self.build_ID3DecisionTree(samples_feature_data,feature_list)
+            # all single trees converge into a random forest
+            self.decision_trees.append(decision_tree)
+
+    def classify(self,decision_tree,test_x):   # One tree classifier
+        first_feature = decision_tree.keys()[0]
+        secondDict = decision_tree[first_feature]
+        feature = test_x[first_feature]
+        value = secondDict.get(feature,"false")
+        # if we can no find the key,then we will return a label randomly
+        if feature == "false":
+            return "Cannnot classify"
+            values = secondDict.values()
+            r = np.random.randint(0,len(values))
+            return values[r]
+        if isinstance(value,dict):  # judge if the value is leaf or tree node
+            classLabel = self.classify(value,test_x)
+        else:
+            classLabel = value
+        return classLabel
+
+    def predict(self,test_data):
+        predict_labels=[]
+        for test_x in test_data:
+            dic={}
+            for decision_tree in self.decision_trees:
+                predict_label = self.classify(decision_tree,test_x)
+                if predict_label == 'Cannot classify':
+                    continue
+                dic[predict_label] = dic.get(predict_label,0) + 1
+            l = sorted(dic.items(),key = lambda x:x[1],reverse = True)
+            # if test_data has the unknown feature
+            if len(l) == 0:
+                r = np.random.randint(0,self.labels.shape[0])
+                label = self.labels[r]
+                predict_label.append(label)
+            else:
+                predict_labels.append(l[0][0])
+        return np.array(predict_labels)
+
+    def accuracy(self,test_data):
+        predict_labels = self.predict(test_data[:,:-1])
+        length = test_data.shape[0]
+        num = 0
+        for i in range(length):
+            if predict_labels[i] == test_data[i,-1]:
+                num += 1
+        print("Test data accuracy is %f"%(num*1.0/length))
+
+
+
+
+
+
+
+
+
+
+
 
 
 
