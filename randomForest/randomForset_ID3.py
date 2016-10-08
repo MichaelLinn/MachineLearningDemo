@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 # @Time     : 2016/10/2 22:52
 # @Author   : Jason
-
+"""
+this random forest use ID3 decision tree
+"""
 import numpy as np
 import random
 class randomForset():
@@ -140,6 +142,7 @@ class randomForset():
             if predict_labels[i] == test_data[i,-1]:
                 num += 1
         print("Test data accuracy is %f"%(num*1.0/length))
+
 
 
 

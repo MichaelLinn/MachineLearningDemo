@@ -24,8 +24,8 @@ class adaBoost:
 
 
     def stumpDecisionTree(self,dataMat,dimen, thresholdVal, thresholdIneq):
-        retArray = np.ones((np.shape(dataMat)[0],1))   # nunmber of the vector in dataMatrix
-        if thresholdIneq == 'lt':                       # two kinds of the inequal type
+        retArray = np.ones((np.shape(dataMat)[0],1))   # nunmber of the data(vector) in dataMatrix
+        if thresholdIneq == 'lt':                       # two kinds of the inequality type
             retArray[dataMat[:,dimen] <= thresholdVal] = -1.0
             # print(dataMat[:,dimen].T , thresholdIneq , thresholdVal)
             # print((dataMat[:,dimen] <= thresholdVal).T)
@@ -51,11 +51,12 @@ class adaBoost:
                 for inequal in ['lt','gt']:
                     thresholdVal = (rangeMin + float(j) * stepSize)
                     predictedVals = self.stumpDecisionTree(dataMatrix,i,thresholdVal,inequal)
+                    # print("Predict value:" , predictedVals.T)
                     errArr = np.mat(np.ones((m,1)))
                     errArr[predictedVals == labelMat] = 0   # set 0 to the vector which is classified correctly
-                    print(predictedVals.T," ",labelMat.T)
+                    # print(predictedVals.T," ",labelMat.T)
                     weightedError = D.T * errArr
-                    print("split: dim %d, threshold value %.2f ,threshold inequal: %s, the weighted error is %.3f" %(i,thresholdVal,inequal,weightedError))
+                    # print("split: dim %d, threshold value %.2f ,threshold inequal: %s, the weighted error is %.3f" %(i,thresholdVal,inequal,weightedError))
                     if weightedError < minError:
                         minError = weightedError
                         bestClassEst = predictedVals.copy()
@@ -65,20 +66,20 @@ class adaBoost:
         return bestStump,minError,bestClassEst
 
     def adaBoostTrainDecisionStump(self,dataArr,classLabels,numInt=40):
-        weakDecisionTrumpArr = []
+        weakDecisionStumpArr = []
         m = np.shape(dataArr)[0]
-        D = np.mat(np.ones((m,1))/m)     # init the weight of the data.Normally, we set the initial weight is 1/n
+        weight = np.mat(np.ones((m,1))/m)     # init the weight of the data.Normally, we set the initial weight is 1/n
         aggressionClassEst = np.mat(np.zeros((m,1)))
-        for i in range(numInt):
-            bestStump,error,classEst = self.buildStump(dataArr,classLabels,D) # D is a vector of the data's weight
-            print("D: ",D.T)
+        for i in range(numInt): # classEst == class estimation
+            bestStump,error,classEst = self.buildStump(dataArr,classLabels,weight) # D is a vector of the data's weight
+            # print("D: ",weight.T)
             alpha = float(0.5 * np.log((1.0 - error)/max(error , 1e-16)))   # alpha is the weighted of the weak classifier
             bestStump['alpha'] = alpha
-            weakDecisionTrumpArr.append(bestStump)
-            exponent = np.multiply(-1* alpha*np.mat(classLabels).T , classEst) # calculte the exponent [- alpha * Y * Gm(X)]
+            weakDecisionStumpArr.append(bestStump)
+            exponent = np.multiply(-1* alpha * np.mat(classLabels).T , classEst) # calculte the exponent [- alpha * Y * Gm(X)]
             print("classEst ：",classEst.T)
-            D = np.multiply(D,np.exp(exponent)) # update the weight of the data, w_m = e^[- alpha * Y * Gm(X)]
-            D = D/D.sum()  # D.sum() == Z_m (Normalized Factor) which makes sure the D_(m+1) can be a probability distribution
+            weight = np.multiply(weight,np.exp(exponent)) # update the weight of the data, w_m = e^[- alpha * Y * Gm(X)]
+            weight = weight/weight.sum()  # D.sum() == Z_m (Normalized Factor) which makes sure the D_(m+1) can be a probability distribution
             # give every estimated class vector (the classified result of the weak classifier) a weight
             aggressionClassEst += alpha*classEst
             print("aggression classEst: ",aggressionClassEst.T)
@@ -89,14 +90,43 @@ class adaBoost:
             print("total error: ",errorRate,"\n")
             if errorRate == 0:
                 break
-        return weakDecisionTrumpArr
+        return weakDecisionStumpArr
+
+    def classify(self,adaboostModel,arr_single):
+        classLabel = []
+        # n_row,n_col = arr_single.shape
+        for i in range(len(adaboostModel)):
+            inequal = adaboostModel[i]['inequal']
+            if inequal == 'lt':
+                if arr_single[adaboostModel[i]['dimension']] <= adaboostModel[i]['threshold']:
+                    classLabel.append(-1)
+                else:
+                    classLabel.append(1)
+            else:
+                if arr_single[adaboostModel[i]['dimension']] >= adaboostModel[i]['threshold']:
+                    classLabel.append(-1)
+                else:
+                    classLabel.append(1)
+            classLabel[i] = classLabel[i] * adaboostModel[i]['alpha']
+        predictValue = np.sign(sum(classLabel))
+        return predictValue
+
+    def adaClassify(self,data,adaBoostModel):
+        dataMat = np.mat(data)
+        aggClassEst = np.mat(np.zeros((data.shape[0],1)))
+        for i in range(len(adaBoostModel)):
+            classLabels = self.stumpDecisionTree(dataMat,adaBoostModel[i]['dimension'],adaBoostModel[i]['threshold'],adaBoostModel[i]['inequal'])
+            aggClassEst += classLabels*adaBoostModel[i]['alpha']
+
 
 def main():
     ab = adaBoost()
-    D = np.mat(np.ones((5,1))/5)
-    # ab.buildStump(ab.dataMat,ab.classLabels,D)
-    ab.adaBoostTrainDecisionStump(ab.dataMat,ab.classLabels,9)
-
+    weight = np.mat(np.ones((5,1))/5)
+    ab.buildStump(ab.dataMat,ab.classLabels,weight)
+    adaBoostTrees = ab.adaBoostTrainDecisionStump(ab.dataMat,ab.classLabels,9)
+    arr = np.array([1.3,1.0])
+    preditVal = ab.classify(adaBoostTrees,arr)
+    print("predictVal:" , preditVal)
 
 if __name__ == '__main__':
     main()
